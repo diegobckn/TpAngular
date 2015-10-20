@@ -6,20 +6,47 @@
 
     </div>
    <div class="panel-body">
-     <div class="input-group">
-       <span class="input-group-addon" id="sizing-addon2">{{verCtrl.receta.id}}</span>
-      <input type="text" class="form-control disabled" disabled="disabled" ng-model="verCtrl.receta.nombre"
-              aria-describedby="sizing-addon2" />
-
-      <input type="text" class="form-control disabled" disabled="disabled" ng-model="verCtrl.receta.calorias"
-      aria-describedby="sizing-addon2" />
-
-      <input type="text" class="form-control disabled" disabled="disabled" ng-model="verCtrl.receta.temporada"
-      aria-describedby="sizing-addon2" />
-
-
-     </div>
+      <label for="nombre" class="control-label col-sm-2">{{verCtrl.receta.nombre}}</label>
+      <label for="calorias" class="control-label col-sm-2">{{verCtrl.receta.calorias}}</label>
+      <label for="temporada" class="control-label col-sm-2">{{verCtrl.receta.temporada}}</label>
+      <label for="dificultad" class="control-label col-sm-2">{{verCtrl.receta.dificultad}}</label>
      </br>
+     </br>
+     <!-- Tabla Ingredientes -->
+     <div class="panel panel-default">
+      <div class="panel-heading">Ingredientes</div>
+      <table class="table table-striped table-bordered table-hover table-condensed">
+       <thead>
+       <tr>
+         <th>Nombre del ingrediente</th>
+         <th>Cantidad</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr data-ng-repeat="ingrediente in verCtrl.receta.ingredientes">
+         <td>
+           <span>{{ingrediente.nombre}}</span>
+         </td>
+         <td>
+           <span>{{ingrediente.cantidad}}</span>
+         </td>
+       </tr>
+       </tbody>
+     </table>
+    </div>
+    <!-- Tabla Cond -->
+    <div class="panel panel-default">
+      <div class="panel-heading">Condimentos Recomendados</div>
+      <table class="table table-striped table-bordered table-hover table-condensed">
+       <tbody>
+       <tr data-ng-repeat="condimento in verCtrl.receta.condimentos">
+         <td>
+           <span>{{condimento.nombre}}</span>
+         </td>
+       </tr>
+       </tbody>
+     </table>
+    </div>
      <!-- Split button -->
      <div class="btn-group">
        <button type="button" class="btn btn-primary" ng-click="verCtrl.aceptar()">Aceptar</button>
