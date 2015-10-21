@@ -1,7 +1,6 @@
 'use strict';
 
 /* Controllers */
-var recetasListApp = angular.module('recetasListApp', []);
 var recetasListApp = angular.module('recetasListApp', ['ui.router']);
   
 
@@ -9,8 +8,7 @@ var recetasListApp = angular.module('recetasListApp', ['ui.router']);
 recetasListApp.controller('ListarRecetasController', function (RecetasService) {
 
 
- RecetasService.getRecetas();
- this.recetas = RecetasService.recetas;
+ this.recetas = RecetasService.getRecetas();
 
 /*
  this.agregarTarea = function () {
@@ -26,7 +24,6 @@ recetasListApp.controller('ListarRecetasController', function (RecetasService) {
 
 recetasListApp.controller('VerRecetaController', function ($stateParams, $state, RecetasService) {
 
-RecetasService.getRecetas();
 this.receta = RecetasService.getRecetaById($stateParams.id);
 
  if (!this.receta) {
@@ -34,8 +31,21 @@ this.receta = RecetasService.getRecetaById($stateParams.id);
    return;
  }
 
+});
+
+
+recetasListApp.controller('CopiarRecetaController', function ($stateParams, $state, RecetasService) {
+
+this.receta = RecetasService.getRecetaById($stateParams.id);
+this.nuevoNombre = "Copia de " + this.receta.nombre;
+ if (!this.receta) {
+   $state.go("listarRecetas");
+   return;
+ }
+
 
  this.aceptar = function () {
+    RecetasService.copiarReceta(this.receta,this.nuevoNombre);
    $state.go("listarRecetas");
  };
 

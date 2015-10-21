@@ -3,3 +3,43 @@ input.ng-invalid {
 	background-color: #CC4444;
 	color: white;
 }
+
+
+
+.tabla-chica{
+    min-height: 95px;
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow: auto;
+}
+
+
+.tabla-chica th{
+    background: #ccc;
+}
+
+
+.tabla-chica td{
+    padding-left: 8px;
+}
+
+.tabla-fondo-lila th{
+    background:#ccc;
+    color :#fff;
+
+}
+
+
+.text-areas {
+    width:100%;
+    overflow: vertical;
+    height: 95px;
+    border-radius: 0px;
+    padding: 3px 8px;
+    border: 1px solid #6D6868;
+    overflow: scroll;
+}
+
+.text-areas td{
+    padding-left: 8px;
+}

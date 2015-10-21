@@ -31,9 +31,18 @@
 
 
          <td>
-           <a class="btn btn-primary" ui-sref="verReceta({id: receta.id})">Ver Receta</a>
-           <span class="btn btn-warning">Favorita</span>
-           <a class="btn btn-success" ui-sref="verReceta({id: receta.id})">Copiar</a>
+           <a class="btn btn-primary" ui-sref="verReceta({id: receta.id})">
+           <span class="glyphicon glyphicon-eye-open"></span>
+           Ver Receta
+           </a>
+           <p class="btn btn-warning">
+           <span class="glyphicon glyphicon-star"></span>
+           Favorita
+           </p>
+           <a class="btn btn-success" ui-sref="copiarReceta({id: receta.id})">
+           <span class="glyphicon glyphicon-duplicate"></span>
+           Copiar
+           </a>
          
          </td>
 

@@ -16,4 +16,11 @@ recetasListApp.config(function ($stateProvider, $urlRouterProvider) {
       controller: "VerRecetaController as verCtrl"
    })
 
+
+   .state('copiarReceta', {
+     url: "/copiar-receta/:id",
+     templateUrl: "partials/copiar_receta.html",
+      controller: "CopiarRecetaController as copiarCtrl"
+   })
+
 });
